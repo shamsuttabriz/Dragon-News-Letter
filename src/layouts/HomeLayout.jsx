@@ -1,5 +1,7 @@
 import Header from "../components/Header";
 import LatestNews from "../components/LatestNews";
+import LeftNavbar from "../components/layout-components/LeftNavbar";
+import RightNavbar from "../components/layout-components/RightNavbar";
 import Navbar from "../components/Navbar";
 
 export default function HomeLayout() {
@@ -15,9 +17,13 @@ export default function HomeLayout() {
         </nav>
       </header>
       <main className="w-full lg:w-11/12 mx-auto grid grid-cols-12 gap-4">
-        <aside className="col-span-3">Left Navbar</aside>
+        <aside className="col-span-3">
+          <LeftNavbar />
+        </aside>
         <section className="col-span-6">Main content</section>
-        <aside className="col-span-3">Right Navbar</aside>
+        <aside className="col-span-3">
+          <RightNavbar />
+        </aside>
       </main>
     </div>
   );

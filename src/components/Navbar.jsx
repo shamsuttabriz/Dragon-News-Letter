@@ -3,7 +3,7 @@ import user from "../assets/user.png";
 
 export default function Navbar() {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between items-center">
       <div></div>
       <div className="space-x-4">
         <Link to="/">Home</Link>
