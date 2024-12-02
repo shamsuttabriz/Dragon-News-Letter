@@ -43,7 +43,7 @@ export default function Login() {
         </form>
         <p className="text-center font-medium text-gray-500">
           Don&apos;t Have An Account ?{" "}
-          <Link className="text-red-600" to="auth/register">
+          <Link className="text-red-600" to="/auth/register">
             Register
           </Link>
         </p>
