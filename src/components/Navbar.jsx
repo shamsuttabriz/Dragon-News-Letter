@@ -10,9 +10,11 @@ export default function Navbar() {
         <Link to="/about">About</Link>
         <Link to="/career">Career</Link>
       </div>
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-4">
         <img src={user} alt="" />
-        <button className="btn btn-neutral rounded">Login</button>
+        <button className="rounded w-28 h-10 text-white bg-gray-800 hover:bg-gray-600 duration-200">
+          Login
+        </button>
       </div>
     </div>
   );
