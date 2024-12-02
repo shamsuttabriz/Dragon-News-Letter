@@ -5,16 +5,19 @@ export default function Navbar() {
   return (
     <div className="flex justify-between items-center">
       <div></div>
-      <div className="space-x-4">
+      <div className="space-x-6 *:font-medium">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/career">Career</Link>
       </div>
       <div className="flex items-center gap-4">
-        <img src={user} alt="" />
-        <button className="rounded w-28 h-10 text-white bg-gray-800 hover:bg-gray-600 duration-200">
+        <img className="rounded-full" src={user} alt="" />
+        <Link
+          to="/auth/login"
+          className="rounded btn w-28 h-10 text-gray-300 bg-gray-700 hover:bg-gray-800 duration-200"
+        >
           Login
-        </button>
+        </Link>
       </div>
     </div>
   );
