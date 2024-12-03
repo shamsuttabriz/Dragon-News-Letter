@@ -1,4 +1,5 @@
 import { FaEye, FaShareAlt, FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const NewsCard = ({ news }) => {
   const { title, author, thumbnail_url, details, rating, total_view } = news;
@@ -47,9 +48,12 @@ const NewsCard = ({ news }) => {
       {/* Details */}
       <div className="px-4 text-gray-600 text-base leading-relaxed my-3">
         <p>{details.substring(0, 100)}...</p>
-        <button className="text-[#FF8C47] hover:underline font-semibold text-sm mt-2 ">
+        <Link
+          to={`/news/${news._id}`}
+          className="text-[#FF8C47] hover:underline font-semibold text-sm mt-2 "
+        >
           Read More...
-        </button>
+        </Link>
       </div>
 
       {/* Footer Section */}

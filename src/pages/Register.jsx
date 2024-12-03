@@ -1,11 +1,34 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 export default function Register() {
+  const { createNewUser, setUser } = useContext(AuthContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // get form data
+    const form = new FormData(e.target);
+    const name = form.get("name");
+    const photo = form.get("photo");
+    const email = form.get("email");
+    const password = form.get("password");
+    console.log({ name, photo, email, password });
+
+    createNewUser(email, password)
+      .then((res) => {
+        const user = res.user;
+        setUser(user);
+      })
+      .catch((error) => {
+        console.log("Error: ", error.message);
+      });
+  };
   return (
     <div className="min-h-screen flex justify-center items-center">
       <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded p-10">
         <h2 className="text-xl font-bold text-center">Register your account</h2>
-        <form className="card-body">
+        <form onSubmit={handleSubmit} className="card-body">
           {/* Name */}
           <div className="form-control">
             <label className="label">
@@ -15,6 +38,7 @@ export default function Register() {
             </label>
             <input
               type="text"
+              name="name"
               placeholder="Enter your name"
               className="input input-bordered bg-[#F3F3F3] rounded-none"
               required
@@ -29,6 +53,7 @@ export default function Register() {
             </label>
             <input
               type="text"
+              name="photo"
               placeholder="Enter your url link"
               className="input input-bordered bg-[#F3F3F3] rounded-none"
               required
@@ -43,6 +68,7 @@ export default function Register() {
             </label>
             <input
               type="email"
+              name="email"
               placeholder="Enter your email address"
               className="input input-bordered bg-[#F3F3F3] rounded-none"
               required
@@ -57,6 +83,7 @@ export default function Register() {
             </label>
             <input
               type="password"
+              name="password"
               placeholder="Enter your password"
               className="input input-bordered bg-[#F3F3F3] rounded-none"
               required
