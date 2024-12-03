@@ -11,7 +11,7 @@ export default function Navbar() {
         {user ? (
           <Link className="font-medium">{user.email}</Link>
         ) : (
-          <p>User Not Found</p>
+          <p>Please First Signin</p>
         )}
       </div>
       <div className="space-x-6 *:font-medium">
